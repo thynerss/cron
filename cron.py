@@ -40,7 +40,7 @@ def run_single():
 
 def run_multi():
     domain = input("Nhập domain (ví dụ: vessy.pro.vn): ").strip()
-    delay_ms = 5000  # delay mặc định giữa mỗi vòng (5s)
+    delay_ms = 50000  # delay mặc định giữa mỗi vòng (5s)
 
     full_urls = [f"http://{domain}/{path}" for path in endpoints]
 
@@ -53,7 +53,7 @@ def run_multi():
             except Exception as e:
                 print(f"❌ {url} lỗi: {e}")
         print(f"⏳ Đợi {delay_ms}ms trước vòng tiếp theo...\n")
-        time.sleep(delay_ms / 1000.0)
+        time.sleep(delay_ms / 3000.0)
 
 def main():
     print("=== TOOL CHẠY CRON ===")
